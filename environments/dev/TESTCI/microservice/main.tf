@@ -15,7 +15,7 @@ provider "aws" {
 module "service_one" {
     source = "github.com/cageykg/spike4-pipeline//modules/common/microservice"
 
-    service_name = "service-one"
+    service_name = "testci-service"
     service_port = 8081
     service_image_id = "ami-4d3a2e29"
     vpc_name = "${data.terraform_remote_state.vpc.aws_vpc.vpc.name}"
