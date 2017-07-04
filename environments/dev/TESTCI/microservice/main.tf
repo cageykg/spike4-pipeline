@@ -2,7 +2,7 @@ terraform {
   backend "s3" {
     region = "eu-west-2"
     bucket = "tabi-terraformpipeline"
-    key = "SPIKE4/dev/TEAM1/microservice/terraform.tfstate"
+    key = "SPIKE4/dev/TESTCI/microservice/terraform.tfstate"
     profile = "developmentaws"    
   }
 }
@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 module "service_one" {
-    source = "../../../modules/common/microservice"
+    source = "github.com/cageykg/spike4-pipeline//modules/common/microservice"
 
     service_name = "service-one"
     service_port = 8081
