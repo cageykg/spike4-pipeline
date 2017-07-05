@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 module "service_one" {
-    source = "github.com/cageykg/spike4-pipeline//modules/common/microservice"
+    source = "github.com/cageykg/spike4-pipeline//modules/common/microservice?ref=microservice-v5"
 
     service_name = "testci-service"
     service_port = 8081
