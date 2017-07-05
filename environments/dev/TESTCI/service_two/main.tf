@@ -12,7 +12,7 @@ provider "aws" {
     profile = "developmentaws"
 }
 
-module "service_teo" {
+module "service_two" {
     source = "github.com/cageykg/spike4-pipeline//modules/stack/service_two"
 
     service_name = "service-two"
