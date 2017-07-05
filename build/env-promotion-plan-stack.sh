@@ -7,6 +7,7 @@ tag=$5
 git clone ${tf_repo_url} tf_repo
 
 cd tf_repo/environments/${stage_name}/${environment_name}/${stack_name}
+
 git checkout tags/${tag}
 
 terraform init

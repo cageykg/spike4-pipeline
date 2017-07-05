@@ -9,4 +9,19 @@ git clone ${tf_repo_url} tf_repo
 cd tf_repo/environments/${stage_name}/${environment_name}/${stack_name}
 
 git checkout tags/${tag}
-echo "terraform apply would happen here..."
+
+terraform init
+TERRAFORM_INIT_RESULT=$?
+echo "terraform init result: ${TERRAFORM_INIT_RESULT}"
+if [[ ${TERRAFORM_INIT_RESULT} -ne 0 ]]; then
+ exit 1
+fi
+
+terraform apply
+TERRAFORM_APPLY_RESULT=$?
+echo "terraform apply result: ${TERRAFORM_APPLY_RESULT}"
+if [[ ${TERRAFORM_APPLY_RESULT} -ne 0 ]]; then
+ exit 1
+fi
+
+
