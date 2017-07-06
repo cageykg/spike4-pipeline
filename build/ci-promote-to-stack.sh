@@ -6,7 +6,7 @@ stack_name=$5
 
 git clone ${tf_repo_url} tf_repo
 
-cd tf_repo/${stage_name}/${environment_name}/${stack_name}
+cd tf_repo/environments/${stage_name}/${environment_name}/${stack_name}
 
 # replace any occurrence of 'source....<stack_name>....' with 'source....<stack_name>?ref=<tag>'
 tf_files=$(/bin/ls *.tfvars *.tf 2> /dev/null)
