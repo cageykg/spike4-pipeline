@@ -43,6 +43,15 @@ resource "aws_subnet" "internal_subnet" {
     Name = "internal-${replace(element(split("-", data.aws_availability_zones.available.names[0]),2), "/[0-9]/", "")}"
   }
 }
+resource "aws_subnet" "internal_subnet_2" {
+  vpc_id = "${aws_vpc.vpc.id}"
+  availability_zone = "${data.aws_availability_zones.available.names[0]}"
+  cidr_block = "${cidrsubnet(aws_vpc.vpc.cidr_block, 8, 2)}"
+
+  tags {
+    Name = "internal-${replace(element(split("-", data.aws_availability_zones.available.names[0]),2), "/[0-9]/", "")}"
+  }
+}
 
 resource "aws_subnet" "external_subnet" {
   vpc_id = "${aws_vpc.vpc.id}"

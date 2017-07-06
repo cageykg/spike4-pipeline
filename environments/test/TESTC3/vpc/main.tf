@@ -18,10 +18,4 @@ module "vpc" {
   cidr_block = "10.6.0.0/16"
 }
 
-module "dummy" {
-  source     = "github.com/cageykg/spike4-pipeline//modules/network/dummy"
-  vpc_name   = "TESTC3"
-  cidr_block = "10.6.0.0/16"
-}
-
 
