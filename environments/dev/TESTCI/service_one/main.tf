@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 module "service_one" {
-    source = "github.com/cageykg/spike4-pipeline//modules/stack/service_one?ref=service_one-v2"
+    source = "github.com/cageykg/spike4-pipeline//modules/stack/service_one"
 
     service_name = "service-one"
     service_port = 8081

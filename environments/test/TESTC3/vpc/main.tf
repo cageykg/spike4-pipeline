@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 module "vpc" {
-  source     = "github.com/cageykg/spike4-pipeline//modules/network/vpc"
+  source     = "github.com/cageykg/spike4-pipeline//modules/network/vpc?ref=vpc-v1"
   vpc_name   = "TESTC3"
   cidr_block = "10.6.0.0/16"
 }
